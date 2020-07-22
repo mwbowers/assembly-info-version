@@ -3,9 +3,7 @@ const os = require("os");
 
 function run()
 {
-    aip = process.env.AI_PATH || process.env.INPUT_AI_PATH;
-    console.log(`AI_PATH: ${aip}`);
-
+    aip = process.env.AI_PATH || process.env.INPUT_AI_PATH;    
     if (!fs.existsSync(aip))
         throw new Error('AssemblyInfo file not found');
 
@@ -13,9 +11,6 @@ function run()
 
     rgx = new RegExp('\\[assembly: AssemblyVersion\\(\\"(.*)\\"\\)\\]', 'm');
     ver = rgx.exec(fs.readFileSync(aip, { encoding: 'utf-8' }))[1];
-
-    console.log(`Ver: ${ver}`);
-
 
     if (!ver)
         throw new Error('Failed to get Assembly Version');
