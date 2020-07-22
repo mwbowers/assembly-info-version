@@ -32,9 +32,9 @@ jobs:
 
 ## Inputs
 
-Input | Default Value | Description
---- | --- | ---
-AI_PATH | | Filepath of the AssemblyInfo, relative to root of repository
+Input | Description
+--- | ---
+AI_PATH | Filepath of the AssemblyInfo, relative to root of repository
 
 ## Outputs
 
