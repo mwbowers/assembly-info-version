@@ -1,22 +1,11 @@
-name: "units-test"
+name: "Test the action"
 on:
-  pull_request:
   push:
-    branches:
-      - main
-      - 'releases/*'
+    branches: [ master ]
 
 jobs:
-  # unit tests
-  units:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm test
-
-  # test action works running from the graph
-  test:
+  
+  test the action:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
