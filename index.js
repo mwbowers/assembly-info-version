@@ -4,6 +4,10 @@ const os = require("os");
 function run()
 {
     aip = process.env.AI_PATH;
+    console.log(`AI_PATH: ${aip}`);
+
+    aip2 = process.env.INPUT_AI_PATH;
+    consol.log(`AI_PATH(2): ${aip2}`);
 
     if (!fs.existsSync(aip))
         throw new Error("AssemblyInfo file not found");
