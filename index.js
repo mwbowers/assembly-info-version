@@ -13,7 +13,10 @@ function run()
 
     rgx = new RegExp("\[assembly: AssemblyVersion\(\"(.*)\"\)\]", "m")
 
-    ver = this.rgx.exec(fs.readFileSync(aip, { encoding: "utf-8" }))[1];
+    ver = this.rgx.exec(fs.readFileSync(aip, { encoding: "utf-8" }));
+
+    console.log(`Ver: ${ver}`);
+
 
     if (!ver)
         throw new Error("Failed to get Assembly Version");
