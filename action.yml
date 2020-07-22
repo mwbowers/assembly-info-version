@@ -4,7 +4,7 @@ description: Get the version from AssemblyInfo files in older style Visual Studi
 
 inputs:
     AI_PATH:
-        description: Filepath of the project to be packaged, relative to root of repository
+        description: Filepath of the AssemblyInfo.cs file, relative to root of repository
         required: true
 outputs:
     ASSEMBLY_VERSION:
