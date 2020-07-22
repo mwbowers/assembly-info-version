@@ -14,7 +14,8 @@ function run()
     const text = fs.readFileSync(aip, { encoding: 'utf-8' });
     console.log(`Text: \n${text}`);
 
-    rgx = new RegExp('\[assembly: AssemblyVersion\(\"(.*)\"\)\]', 'm');
+    //rgx = new RegExp('\[assembly: AssemblyVersion\(\"(.*)\"\)\]', 'm');
+    rgx = new RegExp('\[assembly.*', 'm');
     ver = rgx.exec(text);
 
     console.log(`Ver: ${ver}`);
