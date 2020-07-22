@@ -1,17 +1,17 @@
-const core = require('@actions/core');
 const fs = require('fs');
+const os = require("os");
 
 // most @actions toolkit packages have async methods
 async function run()
 {
     try
     {
-        aip = core.getInput('AI_PATH', { required: true });
+        aip = process.env.AI_PATH;
 
         if (!fs.existsSync(aip))
             throw new Error("AssemblyInfo file not found");
 
-        core.info(`AssemblyInfo Path: ${aip}`)
+        console.log(`AssemblyInfo Path: ${aip}`)
 
         rgx = new RegExp("\[assembly: AssemblyVersion\(\"(.*)\"\)\]", "m")
 
@@ -20,9 +20,10 @@ async function run()
         if (!ver)
             throw new Error("Failed to get Assembly Version");
 
-        core.info(`Version: ${ver}`)
+        console.log(`Assembly Version: ${ver}`)
 
-        core.setOutput('ASSEMBLY_VERSION', `${ver}`);
+        process.stdout.write(`::set-output name=ASSEMBLY_VERSION::${ver}` + os.EOL)
+
     }
     catch (error)
     {
