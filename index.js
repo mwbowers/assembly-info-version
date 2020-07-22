@@ -7,7 +7,7 @@ function run()
     console.log(`AI_PATH: ${aip}`);
 
     aip2 = process.env.INPUT_AI_PATH;
-    consol.log(`AI_PATH(2): ${aip2}`);
+    console.log(`AI_PATH(2): ${aip2}`);
 
     if (!fs.existsSync(aip))
         throw new Error("AssemblyInfo file not found");

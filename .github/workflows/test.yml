@@ -11,5 +11,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./
       with:
-        AI_PATH: ./github/workflows/AssemblyInfo.cs
+        AI_PATH: ./AssemblyInfo.cs
 
