@@ -11,11 +11,8 @@ function run()
 
     console.log(`AssemblyInfo Path: ${aip}`)
 
-    const text = fs.readFileSync(aip, { encoding: 'utf-8' });
-    console.log(`Text: \n${text}`);
-
     rgx = new RegExp('\\[assembly: AssemblyVersion\\(\\"(.*)\\"\\)\\]', 'm');
-    ver = rgx.exec(text)[0];
+    ver = rgx.exec(fs.readFileSync(aip, { encoding: 'utf-8' }))[1];
 
     console.log(`Ver: ${ver}`);
 
@@ -26,7 +23,6 @@ function run()
     console.log(`Assembly Version: ${ver}`)
 
     process.stdout.write(`::set-output name=ASSEMBLY_VERSION::${ver}` + os.EOL)
-
 }
 
 run();

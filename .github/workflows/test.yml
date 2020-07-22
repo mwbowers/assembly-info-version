@@ -12,4 +12,5 @@ jobs:
     - uses: ./
       with:
         AI_PATH: ./AssemblyInfo.cs
+    -run: echo 
 
