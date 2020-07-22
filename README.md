@@ -1,4 +1,4 @@
-# ✨ Publish NuGet
+# Assembly Info Version
 GitHub action to get the Assembly Version from the Properties/AssemblyInfo files of older Visual Studio projects
 
 ## Usage
