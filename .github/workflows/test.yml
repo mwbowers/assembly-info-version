@@ -1,0 +1,21 @@
+name: "Test the action"
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Get Version
+      uses: ./
+      id: get_version
+      with:
+        AI_PATH: ./.github/workflows/AssemblyInfo.cs
+        
+    - name: Next Step
+      run: echo "${{ steps.get_version.outputs.ASSEMBLY_VERSION }}"
+      
