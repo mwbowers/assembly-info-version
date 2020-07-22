@@ -15,7 +15,7 @@ function run()
     console.log(`Text: \n${text}`);
 
     rgx = new RegExp('\\[assembly: AssemblyVersion\\(\\"(.*)\\"\\)\\]', 'm');
-    ver = rgx.exec(text);
+    ver = rgx.exec(text)[0];
 
     console.log(`Ver: ${ver}`);
 
