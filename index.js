@@ -7,19 +7,21 @@ function run()
     console.log(`AI_PATH: ${aip}`);
 
     if (!fs.existsSync(aip))
-        throw new Error("AssemblyInfo file not found");
+        throw new Error('AssemblyInfo file not found');
 
     console.log(`AssemblyInfo Path: ${aip}`)
 
-    rgx = new RegExp("\[assembly: AssemblyVersion\(\"(.*)\"\)\]", "m")
+    const text = fs.readFileSync(aip, { encoding: 'utf-8' });
+    console.log(`Text: \n${text}`);
 
-    ver = this.rgx.exec(fs.readFileSync(aip, { encoding: "utf-8" }));
+    rgx = new RegExp('\[assembly: AssemblyVersion\(\"(.*)\"\)\]', 'm');
+    ver = rgx.exec(text);
 
     console.log(`Ver: ${ver}`);
 
 
     if (!ver)
-        throw new Error("Failed to get Assembly Version");
+        throw new Error('Failed to get Assembly Version');
 
     console.log(`Assembly Version: ${ver}`)
 
