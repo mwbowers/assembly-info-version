@@ -1,7 +1,7 @@
 name: "Test the action"
 on:
   push:
-    branches: [ master ]
+    branches: [ main
 
 jobs:
   
