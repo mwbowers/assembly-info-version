@@ -23,4 +23,4 @@ function run()
 
 }
 
-new Action().run()
+run();
