@@ -1,13 +1,14 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: AssemblyInfo Version
+author: Jason Davis
+description: Get the version from AssemblyInfo files in older style Visual Studio projects 
+
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+    AI_PATH:
+        description: Filepath of the project to be packaged, relative to root of repository
+        required: true
 outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+    ASSEMBLY_VERSION:
+        description: AssemblyVersion in the AssemblyInfo file
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+    using: node12
+    main: dist/index.js
