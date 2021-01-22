@@ -16,6 +16,30 @@ jobs:
       with:
         AI_PATH: ./.github/workflows/AssemblyInfo.cs
         
-    - name: Next Step
-      run: echo "${{ steps.get_version.outputs.ASSEMBLY_VERSION }}"
-      
+    - name: Get Version 1
+      uses: ./
+      id: get_version1
+      with:
+        AI_PATH: ./.github/workflows/AssemblyInfo.cs
+        VER_PLACES : 1
+
+    - name: Get Version 2
+      uses: ./
+      id: get_version2
+      with:
+        AI_PATH: ./.github/workflows/AssemblyInfo.cs
+        VER_PLACES : 2
+
+    - name: Get Version 3
+      uses: ./
+      id: get_version3
+      with:
+        AI_PATH: ./.github/workflows/AssemblyInfo.cs
+        VER_PLACES : 3
+        
+    - name: Get Version 4
+      uses: ./
+      id: get_version4
+      with:
+        AI_PATH: ./.github/workflows/AssemblyInfo.cs
+        VER_PLACES : 4
