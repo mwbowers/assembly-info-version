@@ -15,6 +15,21 @@ function run()
     if (!ver)
         throw new Error('Failed to get Assembly Version');
 
+    vp = process.env.VER_PLACES || process.env.INPUT_VER_PLACES;
+    
+    console.log(`process.env.VER_PLACES: ${process.env.VER_PLACES}`)
+    console.log(`process.env.INPUT_VER_PLACES: ${process.env.INPUT_VER_PLACES}`)
+    console.log(`vp: ${vp}`)
+    
+    if (vp < 0 || vp > 4)
+        throw new Error('Invalid version places');
+    
+    if (vp > 0 && vp < 4){
+        var verSplit = ver.split('.');
+        verSplit = verSplit.slice(0, vp);
+        ver = verSplit.join('.');
+    }
+    
     console.log(`Assembly Version: ${ver}`)
 
     process.stdout.write(`::set-output name=ASSEMBLY_VERSION::${ver}` + os.EOL)
