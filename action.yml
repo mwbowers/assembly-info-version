@@ -6,6 +6,10 @@ inputs:
     AI_PATH:
         description: Filepath of the AssemblyInfo.cs file, relative to root of repository
         required: true
+    VER_PLACES :
+        description: Number of places of the version number to return (Major.Minor.Build.Revision). 1 for Major, 2 for Major.Minor, 3 for Major.Minor.Build, 4 for Major.Minor.Build.Revision.
+        required: false
+
 outputs:
     ASSEMBLY_VERSION:
         description: AssemblyVersion in the AssemblyInfo file
@@ -16,4 +20,3 @@ runs:
 branding:
     icon: activity
     color: gray-dark
-    
