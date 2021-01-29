@@ -1,4 +1,4 @@
-![Test the action](https://github.com/mwbowers81/assembly-info-version/workflows/Test/badge.svg)
+![Test the action](https://github.com/mwbowers81/assembly-info-version/workflows/Test%20the%20action/badge.svg)
 
 # Assembly Info Version
 GitHub action to get the Assembly Version from the Properties/AssemblyInfo files of older Visual Studio projects
